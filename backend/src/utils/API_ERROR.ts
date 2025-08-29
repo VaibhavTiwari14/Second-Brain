@@ -69,6 +69,10 @@ class ApiError extends Error {
   static internal(message = 'Internal server error') {
     return new ApiError(500, message);
   }
+
+  static conflict(message = "conflict of data"){
+    return new ApiError(409,message);
+  }
 }
 
 export default ApiError;

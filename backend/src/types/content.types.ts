@@ -2,9 +2,9 @@ import mongoose, { Document } from 'mongoose';
 
 export interface IContent extends Document {
   link: string;
-  contentType: 'Youtube' | 'Twitter' | 'Notion-Doc';
+  contentType: 'image' | 'video' | 'article' | 'audio';
   title: string;
-  tags: mongoose.Types.ObjectId[];
+  tags?: mongoose.Types.ObjectId[];
   userId: mongoose.Types.ObjectId;
   createdAt: Date;
   updatedAt: Date;

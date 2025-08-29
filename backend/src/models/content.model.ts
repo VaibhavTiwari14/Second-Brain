@@ -4,7 +4,6 @@ import { IContent } from '../types/content.types';
 const urlRegex =
   /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 
-
 const contentSchema: Schema<IContent> = new mongoose.Schema(
   {
     link: {
@@ -14,7 +13,7 @@ const contentSchema: Schema<IContent> = new mongoose.Schema(
     },
     contentType: {
       type: String,
-      enum: ['Youtube', 'Twitter', 'Notion-Doc'],
+      enum: ['image', 'video', 'article', 'audio'],
       required: true,
     },
     title: {
@@ -30,6 +29,7 @@ const contentSchema: Schema<IContent> = new mongoose.Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
+      required : true
     },
   },
   { timestamps: true },

@@ -15,4 +15,11 @@ app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 app.use(express.static('public'));
 app.use(cookieParser());
 
+import errorHandler from './middlewares/globalErrorHandler';
+import userRouter from './routes/user.routes';
+
+app.use('/api/v1/users', userRouter);
+
+app.use(errorHandler);
+
 export { app };
