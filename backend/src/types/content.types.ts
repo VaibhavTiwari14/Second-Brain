@@ -9,3 +9,9 @@ export interface IContent extends Document {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface addContentSchema {
+  link: string | undefined;
+  contentType: 'image' | 'video' | 'article' | 'audio' | undefined;
+  title: string | undefined;
+}                                                   
