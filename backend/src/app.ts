@@ -19,9 +19,12 @@ import authorizeUser from './middlewares/auth/auth.middleware';
 import errorHandler from './middlewares/globalErrorHandler';
 import contentRouter from './routes/content.routes';
 import userRouter from './routes/user.routes';
+import linkRouter from './routes/link.routes';
 
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/content', authorizeUser, contentRouter);
+app.use('/api/v1/brain-link', authorizeUser, linkRouter);
+
 
 app.use(errorHandler);
 

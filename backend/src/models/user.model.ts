@@ -12,7 +12,7 @@ const userSchema: Schema<IUser> = new mongoose.Schema(
       trim: true,
       minlength: [4, 'Username must be at least 4 characters'],
       maxlength: [10, 'Username must not exceed 10 characters'],
-    },
+    },      
 
     password: {
       type: String,

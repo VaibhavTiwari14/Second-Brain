@@ -10,6 +10,7 @@ const linkSchema: Schema<ILink> = new mongoose.Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
+      unique:true
     },
   },
   { timestamps: true },
